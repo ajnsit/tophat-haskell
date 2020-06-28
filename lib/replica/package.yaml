@@ -1,0 +1,64 @@
+name:                replica
+version:             0.1.0.0
+github:              https://github.com/pkamenarsky/replica
+license:             BSD3
+author:              Philip Kamenarsky
+maintainer:          p.kamenarsky@gmail.com
+copyright:           2019 (c) Philip Kamenarsky
+
+extra-source-files:
+- README.md
+- ChangeLog.md
+
+# Metadata used when publishing your package
+synopsis:            Remote virtual DOM library
+category:            Web
+
+# To avoid duplicated efforts in documentation and dealing with the
+# complications of embedding Haddock markup inside cabal files, it is
+# common to point users to the README.md file.
+description:         Please see the README on GitHub at <https://github.com/pkamenarsky/replica#readme>
+
+dependencies:
+- base >= 4.7 && < 5
+- aeson
+- bytestring
+- containers
+- file-embed
+- Diff
+- http-types
+- template-haskell
+- stm
+- text
+- wai
+- websockets
+- wai-websockets
+
+library:
+  source-dirs: src
+  exposed-modules:
+  - Replica.VDOM
+  - Replica.VDOM.Diff
+  - Replica.VDOM.Types
+  - Replica.VDOM.Render
+  - Network.Wai.Handler.Replica
+  ghc-options:
+  - -Wall
+  - -ferror-spans
+  - -Wincomplete-uni-patterns
+  - -Wincomplete-record-updates
+  - -Wmissing-import-lists
+
+tests:
+  replica-test:
+    main:                Spec.hs
+    source-dirs:         test
+    ghc-options:
+    - -threaded
+    - -rtsopts
+    - -with-rtsopts=-N
+    dependencies:
+    - text
+    - QuickCheck
+    - quickcheck-instances
+    - replica

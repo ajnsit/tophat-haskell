@@ -1,0 +1,12 @@
+; DO NOT EDIT (unless you know what you are doing)
+;
+; This subdirectory is a git "subrepo", and this file is maintained by the
+; git-subrepo command. See https://github.com/git-commands/git-subrepo#readme
+;
+[subrepo]
+	remote = https://github.com/pkamenarsky/replica
+	branch = master
+	commit = c0046ff9b3be5e20e5306de743b83620cf59c6a9
+	parent = 7467522f207611ad1b9ca51dd37d9dd03237a403
+	method = merge
+	cmdver = 0.4.1
