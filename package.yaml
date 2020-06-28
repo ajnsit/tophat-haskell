@@ -115,14 +115,14 @@ ghc-options:
 
 
 library:
-  source-dirs: src
+  source-dirs: tophat-core
 
 
 executables:
 
-  basic-tophat:
+  tophat-examples:
     main: Main.hs
-    source-dirs: basic
+    source-dirs: tophat-examples
     ghc-options:
       - -threaded
       - -rtsopts
@@ -130,9 +130,9 @@ executables:
     dependencies:
     - tophat
 
-  visual-tophat:
+  tophat-visual:
     main: Main.hs
-    source-dirs: visual
+    source-dirs: tophat-visual
     ghc-options:
       - -threaded
       - -rtsopts

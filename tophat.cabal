@@ -4,7 +4,7 @@ cabal-version: 1.12
 --
 -- see: https://github.com/sol/hpack
 --
--- hash: b74dc9992c056d0356a2c5cff31d46fc8bf164de882b351b6bc4cffedd7e705e
+-- hash: 146ed9d0e49e0f4f35b35c0b8ff18e8118922901330bc40bca67eeb06200bfe5
 
 name:           tophat
 version:        0.1.0.0
@@ -49,7 +49,7 @@ library
   other-modules:
       Paths_tophat
   hs-source-dirs:
-      src
+      tophat-core
   default-extensions: EmptyDataDecls EmptyCase FlexibleContexts FlexibleInstances InstanceSigs MultiParamTypeClasses LambdaCase MultiWayIf NamedFieldPuns TupleSections NumericUnderscores DeriveGeneric DeriveFunctor DeriveFoldable DeriveTraversable DerivingVia StandaloneDeriving BangPatterns KindSignatures TypeOperators MonadComprehensions BinaryLiterals NegativeLiterals NoStarIsType BlockArguments ScopedTypeVariables TypeApplications PartialTypeSignatures NamedWildCards OverloadedStrings OverloadedLists ConstraintKinds RankNTypes DefaultSignatures PatternSynonyms PatternGuards FunctionalDependencies UndecidableInstances GADTs ExistentialQuantification DataKinds PolyKinds TypeFamilies TypeFamilyDependencies QuantifiedConstraints StrictData
   ghc-options: -Wall -Wcompat -Widentities -Wincomplete-record-updates -Wincomplete-uni-patterns -Wpartial-fields -Wredundant-constraints -O2 -flate-specialise -fspecialise-aggressively -fplugin=Polysemy.Plugin
   build-depends:
@@ -62,13 +62,13 @@ library
     , unordered-containers
   default-language: Haskell2010
 
-executable basic-tophat
+executable tophat-examples
   main-is: Main.hs
   other-modules:
       Guis
       Paths_tophat
   hs-source-dirs:
-      basic
+      tophat-examples
   default-extensions: EmptyDataDecls EmptyCase FlexibleContexts FlexibleInstances InstanceSigs MultiParamTypeClasses LambdaCase MultiWayIf NamedFieldPuns TupleSections NumericUnderscores DeriveGeneric DeriveFunctor DeriveFoldable DeriveTraversable DerivingVia StandaloneDeriving BangPatterns KindSignatures TypeOperators MonadComprehensions BinaryLiterals NegativeLiterals NoStarIsType BlockArguments ScopedTypeVariables TypeApplications PartialTypeSignatures NamedWildCards OverloadedStrings OverloadedLists ConstraintKinds RankNTypes DefaultSignatures PatternSynonyms PatternGuards FunctionalDependencies UndecidableInstances GADTs ExistentialQuantification DataKinds PolyKinds TypeFamilies TypeFamilyDependencies QuantifiedConstraints StrictData
   ghc-options: -Wall -Wcompat -Widentities -Wincomplete-record-updates -Wincomplete-uni-patterns -Wpartial-fields -Wredundant-constraints -O2 -flate-specialise -fspecialise-aggressively -fplugin=Polysemy.Plugin -threaded -rtsopts -with-rtsopts=-N
   build-depends:
@@ -82,7 +82,7 @@ executable basic-tophat
     , unordered-containers
   default-language: Haskell2010
 
-executable visual-tophat
+executable tophat-visual
   main-is: Main.hs
   other-modules:
       Concur.Combinators
@@ -96,7 +96,7 @@ executable visual-tophat
       Test.Wire
       Paths_tophat
   hs-source-dirs:
-      visual
+      tophat-visual
   default-extensions: EmptyDataDecls EmptyCase FlexibleContexts FlexibleInstances InstanceSigs MultiParamTypeClasses LambdaCase MultiWayIf NamedFieldPuns TupleSections NumericUnderscores DeriveGeneric DeriveFunctor DeriveFoldable DeriveTraversable DerivingVia StandaloneDeriving BangPatterns KindSignatures TypeOperators MonadComprehensions BinaryLiterals NegativeLiterals NoStarIsType BlockArguments ScopedTypeVariables TypeApplications PartialTypeSignatures NamedWildCards OverloadedStrings OverloadedLists ConstraintKinds RankNTypes DefaultSignatures PatternSynonyms PatternGuards FunctionalDependencies UndecidableInstances GADTs ExistentialQuantification DataKinds PolyKinds TypeFamilies TypeFamilyDependencies QuantifiedConstraints StrictData
   ghc-options: -Wall -Wcompat -Widentities -Wincomplete-record-updates -Wincomplete-uni-patterns -Wpartial-fields -Wredundant-constraints -O2 -flate-specialise -fspecialise-aggressively -fplugin=Polysemy.Plugin -threaded -rtsopts -with-rtsopts=-N
   build-depends:
