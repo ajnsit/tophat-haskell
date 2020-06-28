@@ -139,5 +139,7 @@ executables:
       - -with-rtsopts=-N
     dependencies:
     - tophat
+    - stm
+    - ilist
     - concur-core
     - concur-replica

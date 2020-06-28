@@ -63,6 +63,7 @@ module Prelude
     (/<),
 
     -- ** Vectors
+
     -- Vector,
     -- only,
     -- index,
@@ -104,8 +105,8 @@ module Prelude
     -- ** Functors
     (<||),
     (||>),
-    -- (<|.),
-    -- (.|>),
+    (<|.),
+    (.|>),
     map,
 
     -- ** Applicatives
@@ -126,6 +127,7 @@ module Prelude
     pureDefault,
 
     -- ** Selectives
+
     -- Selective (branch, select, biselect),
     -- check,
     -- when,
@@ -155,21 +157,9 @@ import qualified Data.HashSet as HashSet
 import qualified Data.Text as Text
 import Data.Type.Equality
 import Relude hiding
-  ( ($),
-    ($>),
-    (&),
-    (*>),
-    (++),
-    (++),
-    (.),
-    (<$),
-    (<$>),
-    (<&>),
-    (<*),
-    -- (<>),
+  ( -- (<>),
     -- (<*>),
-    (=<<),
-    (>>),
+
     Any,
     MonadFail (..),
     Nat,
@@ -207,6 +197,20 @@ import Relude hiding
     traceShow,
     traceShowId,
     when,
+    ($),
+    ($>),
+    (&),
+    (*>),
+    (++),
+    (.),
+    (<$),
+    (<$>),
+    (<&>),
+    (<*),
+    (<<<),
+    (=<<),
+    (>>),
+    (>>>),
   )
 import qualified Relude
 import Type.Reflection (SomeTypeRep (..), TypeRep, someTypeRep, typeOf, typeRep)
@@ -279,7 +283,7 @@ debug = Relude.show
 {-# INLINE debug #-}
 
 spy :: Debug a => Text -> a -> a
-spy m x = Relude.traceShow (debug m ++ ": " ++ debug x) x
+spy m x = Relude.trace (chars <| m ++ ": " ++ debug x) x
 {-# INLINE spy #-}
 
 ---- Displaying
@@ -522,9 +526,10 @@ gather = Relude.foldlM
 foldr1 :: (Fold t) => (a -> a -> a) -> t a -> Maybe a
 foldr1 f xs = foldr mf Nothing xs
   where
-    mf x m = Just <| case m of
-      Nothing -> x
-      Just y -> f x y
+    mf x m =
+      Just <| case m of
+        Nothing -> x
+        Just y -> f x y
 
 ---- Traversals
 
@@ -599,17 +604,17 @@ map = Relude.fmap
 (||>) = flip (Relude.<$>)
 {-# INLINE (||>) #-}
 
--- infixl 4 <|.
+infixl 4 <|.
 
--- infixl 4 .|>
+infixl 4 .|>
 
--- (<|.) :: Functor f => a -> f b -> f a
--- (<|.) = (Relude.<$)
--- {-# INLINE (<|.) #-}
+(<|.) :: Functor f => a -> f b -> f a
+(<|.) = (Relude.<$)
+{-# INLINE (<|.) #-}
 
--- (.|>) :: Functor f => f a -> b -> f b
--- (.|>) = (Relude.$>)
--- {-# INLINE (.|>) #-}
+(.|>) :: Functor f => f a -> b -> f b
+(.|>) = (Relude.$>)
+{-# INLINE (.|>) #-}
 
 ---- Applicatives
 

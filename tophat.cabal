@@ -4,7 +4,7 @@ cabal-version: 1.12
 --
 -- see: https://github.com/sol/hpack
 --
--- hash: 79bbc657e1dbc631379f8e03974a38d9605aa79411c05f4c2d3a90afdda93485
+-- hash: b74dc9992c056d0356a2c5cff31d46fc8bf164de882b351b6bc4cffedd7e705e
 
 name:           tophat
 version:        0.1.0.0
@@ -85,6 +85,15 @@ executable basic-tophat
 executable visual-tophat
   main-is: Main.hs
   other-modules:
+      Concur.Combinators
+      Concur.Replica.Widgets
+      Concur.Wire
+      Test.Counter
+      Test.Form
+      Test.Steps
+      Test.Temperature
+      Test.Tree
+      Test.Wire
       Paths_tophat
   hs-source-dirs:
       visual
@@ -94,10 +103,12 @@ executable visual-tophat
       base-noprelude >=4.12 && <5
     , concur-core
     , concur-replica
+    , ilist
     , lens-simple
     , polysemy >=1.3.0 && <1.4.0
     , polysemy-plugin
     , relude >=0.5 && <1
+    , stm
     , text
     , tophat
     , unordered-containers
