@@ -1,6 +1,0 @@
-[submodule "ghcjs-vdom"]
-	path = concur-vdom/ghcjs-vdom
-	url = https://github.com/ajnsit/ghcjs-vdom.git
-[submodule "concur-vdom/ghcjs-ffiqq"]
-	path = concur-vdom/ghcjs-ffiqq
-	url = https://github.com/ghcjs/ghcjs-ffiqq.git

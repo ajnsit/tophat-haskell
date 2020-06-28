@@ -1,1 +1,0 @@
-# Concur - Terminal backend

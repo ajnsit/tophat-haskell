@@ -1,1 +1,0 @@
-# Concur - SDL backend
