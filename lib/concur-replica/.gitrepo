@@ -1,0 +1,12 @@
+; DO NOT EDIT (unless you know what you are doing)
+;
+; This subdirectory is a git "subrepo", and this file is maintained by the
+; git-subrepo command. See https://github.com/git-commands/git-subrepo#readme
+;
+[subrepo]
+	remote = https://github.com/pkamenarsky/concur-replica
+	branch = master
+	commit = 7d16bcc93114c62252e3e22c208dc2a819f02435
+	parent = 0b33097ff174f6d9f0e2f86e824cb90b6dab5e4e
+	method = merge
+	cmdver = 0.4.1

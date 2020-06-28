@@ -1,0 +1,110 @@
+name: concur-replica
+version: '0.1.0.0'
+synopsis: Replica backend for Concur.
+description: Replica backend for Concur.
+category: Web
+author: Philip Kamenarsky
+maintainer: p.kamenarsky@gmail.com
+copyright: 2019 (C) All Rights Reserved.
+license: BSD3
+github: pkamenarsky/concur-replica
+extra-source-files:
+- README.md
+ghc-options:
+- -Wall
+- -ferror-spans
+dependencies:
+- base >=4.7 && <5
+- aeson
+- bytestring
+- containers
+- concur-core
+- free >=4.12
+- replica
+- stm
+- text
+- transformers >=0.5
+- wai
+- wai-websockets
+- websockets
+- warp
+library:
+  source-dirs: src
+  ghc-options:
+  - -Wall
+  - -ferror-spans
+  - -Wincomplete-uni-patterns
+  - -Wincomplete-record-updates
+  - -Wmissing-import-lists
+  exposed-modules:
+  - Concur.Replica
+  - Concur.Replica.DOM
+  - Concur.Replica.DOM.Props
+  - Concur.Replica.DOM.Events
+  - Concur.Replica.Run
+  - Concur.Replica.SVG
+  - Concur.Replica.SVG.Props
+executables:
+  concur-replica-calc:
+    main: Main.hs
+    source-dirs: examples/Calc
+    dependencies:
+    - concur-replica
+    - text
+  concur-replica-chat:
+    main: Main.hs
+    source-dirs: examples/Chat
+    dependencies:
+      - concur-replica
+      - stm
+      - text
+  concur-replica-misc:
+    main: Main.hs
+    source-dirs: examples/Misc
+    dependencies:
+    - concur-replica
+    - text
+  concur-replica-hilo:
+    main: Main.hs
+    source-dirs: examples/HiLo
+    dependencies:
+    - concur-replica
+    - random
+    - text
+  concur-replica-menu:
+    main: Main.hs
+    source-dirs: examples/Menu
+    dependencies:
+    - concur-replica
+    - text
+  concur-replica-multi-entry:
+    main: Main.hs
+    source-dirs: examples/MultiEntry
+    dependencies:
+    - concur-replica
+    - mtl
+    - text
+  concur-replica-select:
+    main: Main.hs
+    source-dirs: examples/Select
+    dependencies:
+    - concur-replica
+    - text
+  concur-replica-svg:
+    main: Main.hs
+    source-dirs: examples/SVG
+    dependencies:
+    - concur-replica
+    - text
+  concur-replica-routing:
+    main: Main.hs
+    source-dirs: examples/Routing
+    dependencies:
+    - concur-replica
+    - text
+  concur-replica-website:
+    main: Main.hs
+    source-dirs: examples/Website
+    dependencies:
+    - concur-replica
+    - text
