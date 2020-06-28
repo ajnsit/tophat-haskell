@@ -1,0 +1,16 @@
+{
+  "name": "concur-react",
+  "version": "0.1.0",
+  "description": "React bindings to the Concur UI lib",
+  "main": "index.js",
+  "scripts": {
+    "test": "exit 0",
+    "build": "webpack"
+  },
+  "author": "Anupam Jain",
+  "license": "BSD3",
+  "dependencies": {
+    "react": "^16.1.0",
+    "react-dom": "^16.1.0"
+  }
+}

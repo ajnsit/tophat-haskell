@@ -1,0 +1,9 @@
+resolver: lts-7.19
+packages:
+- .
+- ../concur-core
+extra-deps:
+- natural-transformation-0.4
+- ghcjs-base-stub-0.1.0.3
+flags: {}
+extra-package-dbs: []
