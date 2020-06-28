@@ -1,0 +1,5 @@
+packages:
+  tophat.cabal
+  lib/concur/concur-core/concur-core.cabal
+  lib/concur-replica/concur-replica.cabal
+  lib/replica/replica.cabal
